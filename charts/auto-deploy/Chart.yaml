@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Auto-deploy Helm Chart
+name: auto-deploy
+version: 0.1.0
