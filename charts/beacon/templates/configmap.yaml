@@ -9,4 +9,4 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
   url: {{ .Values.url }}
-  interval: {{ .Values.interval }}
+  interval: "{{ .Values.interval }}"

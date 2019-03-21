@@ -23,6 +23,22 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: BEACON_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "beacon.fullname" . }}
+                  key: url
+            - name: BEACON_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "beacon.fullname" . }}
+                  key: key
+            - name: BEACON_INTERVAL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "beacon.fullname" . }}
+                  key: interval
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
