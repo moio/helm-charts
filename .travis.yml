@@ -7,8 +7,19 @@ services:
 git:
   depth: 1
 
+notifications:
+  email: false
+
 script:
   - >-
     docker run -it --rm -v $(pwd)/charts:/charts
     --entrypoint /bin/sh linkyard/docker-helm
     -c "helm lint /charts/*"
+
+deploy:
+  provider: script
+  script: >-
+    bash -c "
+    ./.travis/charts.sh publish"
+  on:
+    tags: true
