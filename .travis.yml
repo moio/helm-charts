@@ -11,15 +11,12 @@ notifications:
   email: false
 
 script:
-  - >-
-    docker run -it --rm -v $(pwd)/charts:/charts
-    --entrypoint /bin/sh linkyard/docker-helm
-    -c "helm lint /charts/*"
+  - docker run -it --rm -v $(pwd):/repo --entrypoint /bin/sh linkyard/docker-helm -c "helm lint /repo/charts/*"
 
 deploy:
   provider: script
   script: >-
     bash -c "
-    ./.travis/charts.sh publish"
+    ./.travis/charts.sh publish foo"
   on:
     tags: true
