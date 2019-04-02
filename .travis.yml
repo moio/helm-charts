@@ -1,5 +1,3 @@
-sudo: required
-
 dist: xenial
 
 language: bash
@@ -12,4 +10,7 @@ git:
   depth: 1
 
 script:
-  - helm lint charts/*    
+  - >-
+    docker run -it --rm -v $(pwd)/charts:/charts
+    --entrypoint /bin/sh linkyard/docker-helm
+    -c "helm lint /charts/*"
