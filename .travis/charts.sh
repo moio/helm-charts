@@ -48,16 +48,6 @@ push() {
   git config user.email ${email}
   git config user.name ${name}
 
-  readonly url="https://${user}:${token}@github.com/${user}/${repo}.git"
-
-  git remote set-url origin ${url}
-
-  # Switch to the master branch.
-  readonly head=$(git symbolic-ref HEAD)
-  if [[ "${head}" != "refs/heads/master" ]]; then
-    git checkout master
-  fi
-
   # Recreate gh-pages if it exists.
   set +e
   git branch -D gh-pages > /dev/null 2>&1
@@ -69,9 +59,11 @@ push() {
   mv ./public/* .
   git add .
 
-  git commit -m "Publish Helm chart"
-  git remote set-url --push origin "${url}"
-  git push origin gh-pages --force > /dev/null 2>&1
+  git commit --message "Publish Helm chart"
+
+  readonly url="https://${user}:${token}@github.com/${user}/${repo}.git"
+  git remote add origin-pages "${url}" > /dev/null 2>&1
+  git push --quiet --set-upstream origin-pages gh-pages --force > /dev/null 2>&1
 }
 
 "$@"
