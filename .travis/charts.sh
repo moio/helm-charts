@@ -36,7 +36,7 @@ publish() {
 #
 # Examples:
 #
-#   publish "moikot" "helm-charts" "admin@moikot.com" "Moikot" "AD123FT"
+#   publish "moikot" "helm-charts" "admin@moikot.com" "Moikot" "AD123FFT"
 #
 push() {
   readonly user="${1}"
