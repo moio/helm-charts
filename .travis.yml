@@ -11,12 +11,22 @@ notifications:
   email: false
 
 script:
-  - docker run -it --rm -v $(pwd):/repo --entrypoint /bin/sh linkyard/docker-helm -c "helm lint /repo/charts/*"
+  - >-
+    docker run -it --rm -v $(pwd):/repo --entrypoint /bin/sh
+    linkyard/docker-helm -c "helm lint /repo/charts/*"
 
 deploy:
   provider: script
   script: >-
     bash -c "
-    ./.travis/charts.sh publish foo"
+    ./.travis/charts.sh publish
+    ${GITHUB_USER}
+    ${GITHUB_REPO} &&
+    ./.travis/charts.sh push
+    ${GITHUB_USER}
+    ${GITHUB_REPO}
+    ${GITHUB_USER_EMAIL}
+    ${GITHUB_USER_NAME}
+    ${GITHUB_TOKEN}"
   on:
     tags: true
