@@ -1,6 +1,0 @@
-apiVersion: v1
-name: beacon
-home: https://github.com/moikot/beacon
-appVersion: "0.0.4"
-description: A simple beacon to make sure that your cluster is online.
-version: 0.0.4
