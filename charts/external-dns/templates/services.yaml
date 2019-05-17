@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "_.fullname" . }}-udp
+  annotations:
+    metallb.universe.tf/allow-shared-ip: {{ include "_.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "_.name" . }}
+    helm.sh/chart: {{ include "_.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: LoadBalancer
+  loadBalancerIP: {{ .Values.loadBalancerIP }}
+  ports:
+    - name: dns-udp
+      port: 53
+      protocol: UDP
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "_.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "_.fullname" . }}-tcp
+  annotations:
+    metallb.universe.tf/allow-shared-ip: {{ include "_.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "_.name" . }}
+    helm.sh/chart: {{ include "_.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: LoadBalancer
+  loadBalancerIP: {{ .Values.loadBalancerIP }}
+  ports:
+    - name: dns-tcp
+      port: 53
+      protocol: TCP
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "_.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "_.fullname" . }}-metrics
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: 9153
+  labels:
+    app.kubernetes.io/name: {{ include "_.name" . }}
+    helm.sh/chart: {{ include "_.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: ClusterIP
+  ports:
+    - name: metrics
+      port: 9153
+      protocol: TCP
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "_.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
