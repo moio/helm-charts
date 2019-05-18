@@ -18,9 +18,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "_.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-      annotations:
-        prometheus.io/scrape: {{ .Values.prometheus.scrape }}
-        prometheus.io/port: {{ .Values.prometheus.port }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

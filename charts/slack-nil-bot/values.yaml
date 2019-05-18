@@ -10,8 +10,8 @@ image:
   pullPolicy: IfNotPresent
 
 prometheus:
-  scrape: "true"
-  port: "9153"
+  scrape: true
+  port: 9153
 
 token: ""
 
