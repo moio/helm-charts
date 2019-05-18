@@ -9,6 +9,10 @@ image:
   tag: 0.0.1
   pullPolicy: IfNotPresent
 
+prometheus:
+  scrape: "true"
+  port: "9153"
+
 token: ""
 
 nameOverride: ""
