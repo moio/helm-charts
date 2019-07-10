@@ -1,0 +1,28 @@
+# Default values.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: moikot/smartthings-metrics
+  tag: 0.0.2
+  pullPolicy: IfNotPresent
+
+prometheus:
+  scrape: true
+  port: 9153
+
+token: ""
+refreshInterval: 60
+
+nameOverride: ""
+fullnameOverride: ""
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
