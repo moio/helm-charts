@@ -6,3 +6,6 @@ A set of [Helm charts](https://moikot.github.io/helm-charts/index.yaml) publishe
 Contains Helm charts for:
 * [Slack Nil Bot](https://github.com/moikot/slack-nil-bot)
 * [SmartThings Metrics](https://github.com/moikot/smartthings-metrics)
+
+Via submodules:
+* [Hashicorp Vault](https://github.com/hashicorp/vault-helm)
