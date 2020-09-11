@@ -39,6 +39,9 @@ storageClass:
   # When set to false your PVs will not be archived by the provisioner upon deletion of the PVC.
   archiveOnDelete: true
 
+  # When set to false the sub-directory name will be formed by using the PVC's namespeace and name only.
+  appendVolumeName: true
+
   # Set access mode - ReadWriteOnce, ReadOnlyMany or ReadWriteMany
   accessModes: ReadWriteOnce
 
