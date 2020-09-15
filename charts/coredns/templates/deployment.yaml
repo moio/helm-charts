@@ -61,6 +61,8 @@ spec:
       {{- end }}
       {{- if .Values.isClusterService }}
       dnsPolicy: Default
+      {{- else if .Values.dnsPolicy }}
+      dnsPolicy: {{ .Values.dnsPolicy }}      
       {{- end }}
       {{- if .Values.affinity }}
       affinity:
