@@ -29,5 +29,3 @@ deploy:
     ${GITHUB_USER_EMAIL}
     ${GITHUB_USER_NAME}
     ${GITHUB_TOKEN}"
-  on:
-    tags: true
