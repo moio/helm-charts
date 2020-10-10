@@ -15,14 +15,3 @@ prometheus:
 
 token: ""
 refreshInterval: 60
-
-nameOverride: ""
-fullnameOverride: ""
-
-resources: {}
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
