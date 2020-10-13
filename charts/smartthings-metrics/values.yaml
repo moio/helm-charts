@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: moikot/smartthings-metrics
-  tag: 0.0.4
+  tag: 0.0.5
   pullPolicy: IfNotPresent
 
 prometheus:
