@@ -21,8 +21,8 @@ publish() {
   mkdir -p ./public
   printf "User-Agent: *\nDisallow: /\n" > ./public/robots.txt
 
-  docker run -it --rm -v $(pwd):/repo --entrypoint /bin/sh linkyard/docker-helm \
-  -c "helm init --client-only && helm package /repo/charts/* --destination /repo/public && cd /repo/public && helm repo index --url ${url} ."
+  docker run -it --rm -v $(pwd):/repo --entrypoint /bin/sh alpine/helm:3.4.2 \
+  -c "helm package /repo/charts/* --destination /repo/public && cd /repo/public && helm repo index --url ${url} ."
 }
 
 #
