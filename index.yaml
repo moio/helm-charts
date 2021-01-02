@@ -1,0 +1,81 @@
+apiVersion: v1
+entries:
+  basic-git-server:
+  - apiVersion: v1
+    created: "2021-01-02T19:46:04.55763107Z"
+    description: A very basic Git server.
+    digest: 6df85c50ad545016f3fa7412be63da43f4b5d8609d9a6c9cf514bdc22d9e2752
+    home: https://github.com/moikot/basic-git-server
+    name: basic-git-server
+    urls:
+    - https://moikot.github.io/helm-charts/basic-git-server-0.0.2.tgz
+    version: 0.0.2
+  coredns:
+  - apiVersion: v1
+    appVersion: 1.7.0
+    created: "2021-01-02T19:46:04.560742377Z"
+    description: CoreDNS is a DNS server that chains plugins and provides Kubernetes
+      DNS Services
+    digest: a8f360c297d8e524773da0f3577a0d23b7ac31085957887998ff5cb6df01752d
+    home: https://coredns.io
+    icon: https://coredns.io/images/CoreDNS_Colour_Horizontal.png
+    keywords:
+    - coredns
+    - dns
+    - kubedns
+    maintainers:
+    - email: hello@acale.ph
+      name: Acaleph
+    - email: shashidhara.huawei@gmail.com
+      name: shashidharatd
+    - email: andor44@gmail.com
+      name: andor44
+    - email: manuel@rueg.eu
+      name: mrueg
+    name: coredns
+    sources:
+    - https://github.com/coredns/coredns
+    urls:
+    - https://moikot.github.io/helm-charts/coredns-1.13.3.tgz
+    version: 1.13.3
+  nfs-client-provisioner:
+  - apiVersion: v1
+    appVersion: 3.1.0
+    created: "2021-01-02T19:46:04.561969416Z"
+    description: nfs-client is an automatic provisioner that used your *already configured*
+      NFS server, automatically creating Persistent Volumes.
+    digest: ceefc852fd0337615d32ec971f174f1e5a22f60eb53ad3430b0329cadcfaa89a
+    home: https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client
+    keywords:
+    - nfs
+    - storage
+    maintainers:
+    - email: bart@verwilst.be
+      name: verwilst
+    name: nfs-client-provisioner
+    sources:
+    - https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client
+    urls:
+    - https://moikot.github.io/helm-charts/nfs-client-provisioner-1.3.0.tgz
+    version: 1.3.0
+  slack-nil-bot:
+  - apiVersion: v1
+    created: "2021-01-02T19:46:04.562713529Z"
+    description: The simplest bot wich does nothing except maintaining the connection.
+    digest: 80be58106fd5fc887b80c5970b8258c55e7918d637fd5625bb735c3be3a86fa7
+    home: https://github.com/moikot/slack-nil-bot
+    name: slack-nil-bot
+    urls:
+    - https://moikot.github.io/helm-charts/slack-nil-bot-0.1.0.tgz
+    version: 0.1.0
+  smartthings-metrics:
+  - apiVersion: v1
+    created: "2021-01-02T19:46:04.563085003Z"
+    description: Provides SmartThings metrics to Prometheus.
+    digest: 7798f626ee04c364b7ff7e42415cfb38856d9398d7babfb006c93cab9ffb13b9
+    home: https://github.com/moikot/smartthings-metrics
+    name: smartthings-metrics
+    urls:
+    - https://moikot.github.io/helm-charts/smartthings-metrics-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-01-02T19:46:04.557163076Z"
