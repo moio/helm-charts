@@ -80,6 +80,16 @@ entries:
     version: 0.1.0
   smartthings-metrics-feat-log-details:
   - apiVersion: v1
+    appVersion: 0.0.92
+    created: "2021-02-20T18:25:02.756426293Z"
+    description: Provides SmartThings metrics to Prometheus.
+    digest: 95e7cb652b907c1f0fcb33f9eb2550241ef0aedcde9a29e3438f2cc22db70d90
+    home: https://github.com/moikot/smartthings-metrics
+    name: smartthings-metrics-feat-log-details
+    urls:
+    - https://moikot.github.io/helm-charts/smartthings-metrics-feat-log-details-0.0.92.tgz
+    version: 0.0.92
+  - apiVersion: v1
     appVersion: 0.0.91
     created: "2021-02-20T18:01:33.437614029Z"
     description: Provides SmartThings metrics to Prometheus.
@@ -119,4 +129,4 @@ entries:
     urls:
     - https://moikot.github.io/helm-charts/smartthings-metrics-feat-log-details-0.0.84.tgz
     version: 0.0.84
-generated: "2021-02-20T18:01:33.436741701Z"
+generated: "2021-02-20T18:25:02.756011477Z"
